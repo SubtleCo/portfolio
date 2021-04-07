@@ -6,8 +6,110 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+.section-title {
+	text-align: center;
+}
 
-/* Reset */
+.contacts {
+	text-align: center;
+}
+
+.header-flex {
+	display: flex;
+	text-align: left;
+	align-items: center;
+	justify-content: center;
+}
+
+#header nav > ul > li > a.phone-only {
+	display: none;
+}
+
+.project p {
+	height: 200px;
+}
+
+@media screen and (max-width: 840px) {
+
+	.header-flex {
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#header nav > ul > li > a.phone-only {
+		display: inline-block;
+	}
+
+	.project p {
+		height: auto;
+	}
+
+}
+
+.box .project {
+	height: 100%;
+	margin: 1em;
+}
+
+
+
+.al-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	/* grid-template-rows: 1fr 1fr 1fr 1fr; */
+	justify-items: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+@media screen and (max-width: 840px) {
+	.al-grid {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
+@media screen and (max-width: 640px) {
+	.al-grid {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.al-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.grid-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.grid-item > i {
+
+}
+
+.me {
+	width: 240px;
+	height: 240px;
+	margin: 5%;
+}
+
+header.major p.no-border{
+	border-top: none;
+	padding: 5%;
+	margin-top: 0px;
+}
+
+.major h2{
+	border-bottom-color: rgb(229, 229, 229);
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	padding-bottom: 20px;
+}
 
 /* Based on meyerweb.com/eric/tools/css/reset (v2.0 | 20110126 | License: public domain) */
 
@@ -2270,7 +2372,7 @@
 		}
 
 		.box.features .features-row {
-			border-top: solid 2px #e5e5e5;
+			/* border-top: solid 2px #e5e5e5; */
 			position: relative;
 		}
 
@@ -2283,19 +2385,19 @@
 			.box.features .features-row section {
 				float: left;
 				padding: 3em;
-				width: 50%;
+				width: 25%;
 			}
 
 				.box.features .features-row section :last-child {
 					margin-bottom: 0;
 				}
 
-				.box.features .features-row section:nth-child(2n) {
+				.box.features .features-row section:nth-child(1n) {
 					padding-right: 0;
 				}
 
-					.box.features .features-row section:nth-child(2n):before {
-						background: #e5e5e5;
+					.box.features .features-row section:nth-child(1n):before {
+						/* background: #e5e5e5; */
 						content: '';
 						display: block;
 						height: 100%;
@@ -2305,9 +2407,9 @@
 						width: 2px;
 					}
 
-				.box.features .features-row section:nth-child(2n-1) {
+				/* .box.features .features-row section:nth-child(2n-1) {
 					padding-left: 0;
-				}
+				} */
 
 			.box.features .features-row:first-child {
 				border-top: 0;
@@ -2341,6 +2443,8 @@
 				border-radius: 0;
 				display: block;
 				width: 100%;
+				max-width: 480px;
+				margin: auto;
 			}
 
 			.box .image.featured:first-child {
@@ -2932,6 +3036,7 @@
 
 	#header {
 		background: #444;
+		background-color: #00000070;
 		color: #bbb;
 		cursor: default;
 		height: 3.25em;
@@ -2992,7 +3097,7 @@
 						border-radius: 6px;
 					}
 
-					#header nav > ul > li a:not(.button) {
+					#header nav > ul > li a {
 						color: #fff;
 						display: inline-block;
 						text-decoration: none;
@@ -3067,6 +3172,7 @@
 			background: none;
 			color: rgba(255, 255, 255, 0.75);
 			position: absolute;
+			background-color: #00000050;
 		}
 
 			#header.alt nav > ul > li a:not(.button).icon:before {
@@ -3160,16 +3266,18 @@
 
 /* Banner */
 
+
 	#banner {
 		background-attachment: scroll,							fixed;
 		background-color: #666;
-		background-image: url("images/overlay.png"), url("../../images/banner.jpg");
+		background-image: url("images/overlay.png"), url("../../images/desk3.jpeg");
 		background-position: top left,						center center;
 		background-repeat: repeat,							no-repeat;
 		background-size: auto,							cover;
 		color: #fff;
 		padding: 12em 0 20em 0;
 		text-align: center;
+		height: 60vh;
 	}
 
 		#banner :last-child {
@@ -3178,10 +3286,11 @@
 
 		#banner h2, #banner h3, #banner h4, #banner h5, #banner h6 {
 			color: #fff;
+			
 		}
 
 		#banner h2 {
-			font-size: 3.5em;
+			font-size: 3em;
 			line-height: 1em;
 			margin: 0 0 0.5em 0;
 			padding: 0;
@@ -3550,7 +3659,7 @@
 					}
 
 					#navButton .toggle:before {
-						background: rgba(192, 192, 192, 0.75);
+						background: #00000070;
 						border-radius: 6px;
 						color: #fff;
 						content: '\f0c9';
